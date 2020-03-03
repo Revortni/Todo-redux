@@ -27,9 +27,9 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <div className='container clearfix'>
-          <div className='header_title'>Todo List</div>
+      <header className='header'>
+        <div className='container'>
+          <div className='header__logo'>Todo List</div>
           <div className='header_options_container'>
             {options.map(item => (
               <HeaderTab
