@@ -16,7 +16,11 @@
     border-radius: 10px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    flex-grow: 0;
+    flex-grow: 1;
+
+    @include mq('sm') {
+      flex-grow: 4;
+    }
 
     @include mq('md') {
       flex-grow: 8;

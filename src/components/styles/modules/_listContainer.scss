@@ -29,7 +29,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: 5s all;
 
   @include e(left) {
     display: flex;
