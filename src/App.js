@@ -1,7 +1,5 @@
 import React from 'react';
-import Counter from './component/Counter';
-import Posts from './component/Posts';
-import Postform from './component/Postform';
+import Main from './components/Main';
 import { Provider } from 'react-redux';
 import store from './store';
 import './App.scss';
@@ -9,8 +7,8 @@ import './App.scss';
 function App() {
   return (
     <Provider store={store}>
-      <div className='App'>
-        <Counter />
+      <div className='app'>
+        <Main />
       </div>
     </Provider>
   );
