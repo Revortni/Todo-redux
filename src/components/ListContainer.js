@@ -8,7 +8,7 @@ const ListContainer = props => {
   return (
     <div className='container'>
       <div className='todo-list'>
-        <div className='todo-list-wrapper'>
+        <div className='todo-list__wrapper'>
           {todos.length ? todos : <NoData />}
         </div>
       </div>

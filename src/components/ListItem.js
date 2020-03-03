@@ -5,13 +5,19 @@ import { toggleTodo, removeTodo } from '../actions/todoActions';
 function ListItem(props) {
   return (
     <div className='todo-item clearfix'>
-      <div className='todo-item-left'>
+      <div className='todo-item__left'>
         <input
           type='checkbox'
           checked={props.item.completed}
           onChange={() => props.toggleTodo(props.item.id)}
+          className='todo-item__checkbox'
         />
-        <span className={props.item.completed ? 'completedTask' : ''}>
+        <span
+          className={
+            'todo-item__text' +
+            (props.item.completed ? ' todo-item__text--is-completed' : '')
+          }
+        >
           {props.item.text}
         </span>
       </div>

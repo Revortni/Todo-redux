@@ -10,13 +10,14 @@ const SearchItem = props => {
 
   return (
     <div className='container'>
-      <div className='search_item'>
+      <div className='search'>
         <input
           type='text'
           name='item'
           onChange={handleSearch}
           value={props.searchParam}
           placeholder='Search'
+          className='search__search-field'
         />
       </div>
     </div>

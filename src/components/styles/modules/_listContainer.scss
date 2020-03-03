@@ -1,34 +1,59 @@
 .todo-list {
   box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
-  margin: 20px 15px;
+  margin: 20px 0;
+  flex-grow: 1;
+
+  @include mq('md') {
+    padding: 30px 50px;
+  }
+
+  @include e(wrapper) {
+    padding: 20px;
+    height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
   ::-webkit-scrollbar {
     display: none;
   }
 }
 
-.todo-list-wrapper {
-  background-color: #ffffff;
-  height: 300px;
-  overflow-y: scroll;
-}
-
 .todo-item {
-  width: 100%;
   border-bottom: 1px solid #cecece;
   font-family: 'Roboto';
   font-weight: 300;
   font-size: 20px;
   color: #333333;
   padding: 20px 0;
-}
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 5s all;
 
-.todo-item-left {
-  float: left;
-}
+  @include e(left) {
+    display: flex;
+    align-items: center;
+  }
 
-.todo-item-left span {
-  word-break: break-all;
+  @include e(checkbox) {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+
+    @include mq('md') {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @include e(text) {
+    word-wrap: break-word;
+
+    @include m(is-completed) {
+      text-decoration: line-through;
+    }
+  }
 }
 
 .removeTask {
@@ -41,22 +66,11 @@
   text-align: center;
   font-weight: 500;
   font-size: 20px;
-}
 
-.removeTask:hover {
-  background-color: #ff1d00;
-  color: #fff;
-}
-
-input[type='checkbox'] {
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-}
-
-.completedTask {
-  text-decoration: line-through #5a5a5a;
+  &:hover {
+    background-color: #ff1d00;
+    color: #fff;
+  }
 }
 
 .no_data {
@@ -66,26 +80,4 @@ input[type='checkbox'] {
   font-size: 30px;
   color: #444444;
   padding: 10px;
-}
-
-@media screen and (min-width: 1170px) {
-  .todo-list {
-    padding: 30px 50px;
-  }
-
-  input[type='checkbox'] {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-@media screen and (min-width: 600px) and (max-width: 1170px) {
-  .todo-list {
-    padding: 30px 50px;
-  }
-
-  input[type='checkbox'] {
-    width: 22px;
-    height: 22px;
-  }
 }

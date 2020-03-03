@@ -7,9 +7,7 @@ import './App.scss';
 function App() {
   return (
     <Provider store={store}>
-      <div className='app'>
-        <Main />
-      </div>
+      <Main />
     </Provider>
   );
 }

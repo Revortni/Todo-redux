@@ -30,7 +30,7 @@ class AddItem extends Component {
   render() {
     return (
       <div className='container'>
-        <div className='add_item clearfix'>
+        <div className='input clearfix'>
           <input
             type='text'
             name='item'
@@ -38,9 +38,10 @@ class AddItem extends Component {
             onChange={this.handleChange}
             onKeyDown={this.handleSubmit}
             placeholder='Add a task'
+            className='input__input-field'
           />
-          <div className='add_item_button' onClick={this.handleSubmit}>
-            +
+          <div className='input__button' onClick={this.handleSubmit}>
+            <span>+</span>
           </div>
         </div>
       </div>

@@ -28,9 +28,9 @@ class Header extends React.Component {
   render() {
     return (
       <header className='header'>
-        <div className='container'>
+        <div className='header__container container clearfix'>
           <div className='header__logo'>Todo List</div>
-          <div className='header_options_container'>
+          <nav className='header__options nav'>
             {options.map(item => (
               <HeaderTab
                 name={item.name}
@@ -38,11 +38,13 @@ class Header extends React.Component {
                 onClick={this.setFilter}
                 key={item.name}
                 active={
-                  item.filterName === this.props.filter ? ' activeOption' : ''
+                  item.filterName === this.props.filter
+                    ? ' nav__item--active'
+                    : ''
                 }
               />
             ))}
-          </div>
+          </nav>
         </div>
       </header>
     );

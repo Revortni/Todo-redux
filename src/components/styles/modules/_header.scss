@@ -1,101 +1,60 @@
-header {
+.header {
   background-color: #fff;
   color: #3a3a3a;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
-}
 
-.header_title {
-  cursor: pointer;
-  font-weight: 700;
-  color: #3a3a3a;
-  padding: 16px 15px;
-  font-size: 28px;
-  text-align: center;
-}
-
-.header_options_container {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff;
-}
-
-.header_option_wrapper {
-  width: 33.3333%;
-  float: left;
-}
-
-.header_option {
-  padding: 12px;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: center;
-}
-
-.activeOption {
-  padding: 5px 10px;
-  border-top: 5px solid #4cf;
-}
-
-.header_option:hover {
-  background-color: #eee;
-}
-
-@media screen and (min-width: 1170px) {
-  .header_title {
-    font-size: 22px;
-    text-align: left;
-    float: left;
+  @include e(container) {
+    justify-content: center;
+    @include mq('md') {
+      justify-content: space-between;
+    }
   }
 
-  .header_options_container {
-    margin-right: 15px;
-    float: right;
-    position: static;
-    width: auto;
-  }
-
-  .header_option_wrapper {
-    width: auto;
-    float: left;
-  }
-
-  .header_option {
-    padding: 20px 30px;
-    font-size: 16px;
+  @include e(logo) {
     cursor: pointer;
+    font-weight: 700;
+    color: #3a3a3a;
+    padding: 16px 0;
+    font-size: 28px;
   }
-  .activeOption {
-    padding-top: 15px;
+
+  @include e(options) {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    @include mq('md') {
+      margin-right: 15px;
+      position: static;
+      width: auto;
+    }
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1170px) {
-  .header_title {
-    font-size: 22px;
-    text-align: left;
-    float: left;
-  }
+.nav {
+  display: flex;
+  align-items: stretch;
 
-  .header_options_container {
-    margin-right: 15px;
-    float: right;
-    display: block;
-    position: static;
-    width: auto;
-  }
-  .header_option {
+  @include e(item) {
     padding: 20px 30px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-  }
+    text-align: center;
+    flex-grow: 1;
+    transition: 0.5s border;
 
-  .header_option_wrapper {
-    width: auto;
-    float: left;
-  }
+    &:hover {
+      background-color: #eeeeee;
+    }
 
-  .activeOption {
-    padding-top: 15px;
+    @include m(active) {
+      padding-top: 15px;
+      border-top: 5px solid #4cf;
+    }
+
+    @include mq('md') {
+      flex-grow: 0;
+    }
   }
 }
