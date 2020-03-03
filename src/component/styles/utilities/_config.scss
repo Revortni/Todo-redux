@@ -1,0 +1,97 @@
+//Text
+$base__font-size: 16px;
+$base__line: 24px;
+
+$font-family--primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Helvetica Neue', Arial, sans-serif;
+
+$font-family--secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+  'Helvetica Neue', Arial, sans-serif;
+
+//Colors
+
+$blue: #003bde;
+$red: #f44336;
+$white: #ffffff;
+$black: #000000;
+$gray: #d5dce0;
+$light-blue: #03a9f4;
+$yellow: #fdc228;
+$green: #61d079;
+$violet: #9c27b4;
+$dark-gray: #3c4858;
+
+//Message Colors
+$error: lighten($red, 5%) !default;
+$success: $green !default;
+$edit: $yellow !default; //Breakpoints
+$sm-device: 576px;
+$md-device: 768px;
+$lg-device: 992px;
+$xl-device: 1400px;
+
+//Font size variables
+$default-font-size: $base__font-size - 2px;
+$s-font-size: $default-font-size - 2px;
+$xs-font-size: $default-font-size - 4px;
+$lg-font-size: $default-font-size + 2px;
+
+//Heading font size vairables
+$heading-line-height: 28px !default;
+$head1-font-size: 36px !default;
+$head2-font-size: $head1-font-size - 4px !default;
+$head3-font-size: 20px !default;
+$head4-font-size: 12px !default;
+
+// colors
+$color-default: $white;
+$color-primary: $violet;
+$color-info: $light-blue;
+$color-success: $green;
+$color-warn: $yellow;
+$color-danger: $red;
+
+/* shades of black */
+$lightest: rgba(0, 0, 0, 0.1);
+$lighter: rgba(0, 0, 0, 0.3);
+$light: rgba(0, 0, 0, 0.5);
+$darker: rgba(0, 0, 0, 0.7);
+
+//Color Usage
+$accent-color: $gray;
+$shadow-color: rgba($black, 0.2);
+$border-color: $gray;
+$color-text: $black;
+$color-title: $gray;
+$color-link: $black;
+$color-disabled: $light;
+$color-shadow: #e8e8e8;
+$background-color: $white;
+
+/* typography */
+
+%font-xs {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+%font-sm {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+%font-s {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+%font-sx {
+  font-size: 14px;
+  line-height: 17px;
+}
+
+%font-m {
+  font-size: 16px;
+  line-height: 19px;
+}

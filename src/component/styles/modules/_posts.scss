@@ -1,0 +1,14 @@
+.posts {
+  @include e(container) {
+  }
+}
+
+.post {
+  @include e(title) {
+    text-align: left;
+  }
+
+  @include e(content) {
+    text-align: left;
+  }
+}
