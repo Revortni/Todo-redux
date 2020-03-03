@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Todo-redux/static/css/main.d9ce815a.chunk.css",
-    "main.js": "/Todo-redux/static/js/main.3ee21adc.chunk.js",
-    "main.js.map": "/Todo-redux/static/js/main.3ee21adc.chunk.js.map",
+    "main.css": "/Todo-redux/static/css/main.11bcb182.chunk.css",
+    "main.js": "/Todo-redux/static/js/main.d624026d.chunk.js",
+    "main.js.map": "/Todo-redux/static/js/main.d624026d.chunk.js.map",
     "runtime-main.js": "/Todo-redux/static/js/runtime-main.ecbc510b.js",
     "runtime-main.js.map": "/Todo-redux/static/js/runtime-main.ecbc510b.js.map",
     "static/js/2.580ad43e.chunk.js": "/Todo-redux/static/js/2.580ad43e.chunk.js",
     "static/js/2.580ad43e.chunk.js.map": "/Todo-redux/static/js/2.580ad43e.chunk.js.map",
     "index.html": "/Todo-redux/index.html",
-    "precache-manifest.c02cc8fab2322cc9e9ad0499be3a6fe2.js": "/Todo-redux/precache-manifest.c02cc8fab2322cc9e9ad0499be3a6fe2.js",
+    "precache-manifest.665bbcfc6a6b1daab3dbbf4b31037242.js": "/Todo-redux/precache-manifest.665bbcfc6a6b1daab3dbbf4b31037242.js",
     "service-worker.js": "/Todo-redux/service-worker.js",
-    "static/css/main.d9ce815a.chunk.css.map": "/Todo-redux/static/css/main.d9ce815a.chunk.css.map",
+    "static/css/main.11bcb182.chunk.css.map": "/Todo-redux/static/css/main.11bcb182.chunk.css.map",
     "static/js/2.580ad43e.chunk.js.LICENSE.txt": "/Todo-redux/static/js/2.580ad43e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ecbc510b.js",
     "static/js/2.580ad43e.chunk.js",
-    "static/css/main.d9ce815a.chunk.css",
-    "static/js/main.3ee21adc.chunk.js"
+    "static/css/main.11bcb182.chunk.css",
+    "static/js/main.d624026d.chunk.js"
   ]
 }
