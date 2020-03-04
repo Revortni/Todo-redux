@@ -11,18 +11,20 @@ const getVisibleTodos = (todos, filter) => {
     case VisibilityFilters.SHOW_ALL:
       return todos;
     case VisibilityFilters.SHOW_COMPLETED:
-      return todos.filter(t => t.completed);
+      return todos.filter(item => item.completed);
     case VisibilityFilters.SHOW_ACTIVE:
-      return todos.filter(t => !t.completed);
+      return todos.filter(item => !item.completed);
     default:
       return todos;
   }
 };
 
 const Main = props => {
-  console.log(props);
   const filtered = getVisibleTodos(props.todos, props.visibilityFilter);
-  const todos = filtered.filter(item => item.text.includes(props.searchParam));
+  console.log(props);
+  const todos = filtered.filter(item =>
+    item.text.toLowerCase().includes(props.searchParam.toLowerCase())
+  );
 
   return (
     <React.Fragment>
