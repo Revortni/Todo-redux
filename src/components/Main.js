@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ListContainer from './ListContainer';
 import AddItem from './AddItem';
 import SearchItem from './SearchItem';
 import Header from './Header';
 import { connect } from 'react-redux';
 import { VisibilityFilters } from '../actions/types';
+import { fetchData } from '../actions/todoActions';
 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
@@ -20,8 +21,11 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 const Main = props => {
+  useEffect(() => {
+    props.fetchData();
+  }, []);
+
   const filtered = getVisibleTodos(props.todos, props.visibilityFilter);
-  console.log(props);
   const todos = filtered.filter(item =>
     item.text.toLowerCase().includes(props.searchParam.toLowerCase())
   );
@@ -40,4 +44,8 @@ const mapStateToProps = ({ todos, searchParam, visibilityFilter }) => {
   return { todos, searchParam, visibilityFilter };
 };
 
-export default connect(mapStateToProps, {})(Main);
+const mapDispatchToProps = dispatch => ({
+  fetchData: () => dispatch(fetchData())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

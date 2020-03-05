@@ -1,54 +1,81 @@
-import { combineReducers } from 'redux';
-
-import {
-  FETCH_TODOS,
-  ADD_TODO,
-  TOGGLE_TODO,
-  REMOVE_TODO
-} from '../actions/types';
+// import {
+//   FETCH_TODOS,
+//   ADD_TODO,
+//   TOGGLE_TODO,
+//   REMOVE_TODO
+// } from '../actions/types';
 import VisibilityFilter from './visibilityFilter';
 import searchFilter from './searchReducer';
 import { v4 as uuidv4 } from 'uuid';
-import data from './todoData';
+
+import { handleActions } from 'redux-actions';
 
 const initialState = {
-  todos: data,
+  todos: [],
   content: '',
   visibilityFilter: 'SHOW_ALL',
-  searchParam: '',
-  filtered: data
+  searchParam: ''
 };
 
-const todos = (state = [], action) => {
-  switch (action.type) {
-    case FETCH_TODOS:
-      return state;
+// const STORAGE = 'todos';
 
-    case ADD_TODO:
-      return [
-        {
-          id: uuidv4(),
-          text: action.content,
-          completed: false
-        },
-        ...state
-      ];
+const fetchFromLocal = state => {
+  return state;
+};
 
-    case REMOVE_TODO:
-      return state.filter(todo => todo.id !== action.index);
+// const todos = (state = [], action) => {
+//   switch (action.type) {
+//     case FETCH_TODOS:
+//       return fetchFromLocal();
 
-    case TOGGLE_TODO:
-      return state.map(todo => {
-        if (todo.id === action.index) {
+//     case ADD_TODO:
+// const item = {
+//   id: uuidv4(),
+//   text: action.content,
+//   completed: false
+// };
+//       const newTodos = saveToLocal(item, state);
+//       return newTodos;
+
+//     case REMOVE_TODO:
+//       return state.filter(todo => todo.id !== action.index);
+
+//     case TOGGLE_TODO:
+//       return state.map(todo => {
+//         if (todo.id === action.index) {
+//           return { ...todo, completed: !todo.completed };
+//         }
+//         return todo;
+//       });
+
+//     default:
+//       return state;
+//   }
+// };
+
+const todos = handleActions(
+  {
+    FETCH_TODOS: (state, action) => [...action.payload],
+    ADD_TODO: (state, action) => {
+      const item = {
+        id: uuidv4(),
+        text: action.payload,
+        completed: false
+      };
+      return [item, ...state];
+    },
+    REMOVE_TODO: (state, action) =>
+      state.filter(todo => todo.id !== action.payload),
+    TOGGLE_TODO: (state, action) =>
+      state.map(todo => {
+        if (todo.id === action.payload) {
           return { ...todo, completed: !todo.completed };
         }
         return todo;
-      });
-
-    default:
-      return state;
-  }
-};
+      })
+  },
+  []
+);
 
 const todoApp = (state = initialState, action) => {
   return {
@@ -58,10 +85,5 @@ const todoApp = (state = initialState, action) => {
     visibilityFilter: VisibilityFilter(state.visibilityFilter, action)
   };
 };
-
-// const todoApp = combineReducers({
-//   visibilityFilter,
-//   todos
-// });
 
 export default todoApp;

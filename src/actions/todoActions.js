@@ -7,32 +7,25 @@ import {
   SET_VISIBILITY_FILTER
 } from './types';
 
-export const fetchTodo = content => {
-  return {
-    type: FETCH_TODOS,
-    content
+import { createAction } from 'redux-actions';
+import data from '../reducer/todoData';
+
+export const fetchTodo = createAction(FETCH_TODOS);
+
+export const addTodo = createAction(ADD_TODO);
+
+export const toggleTodo = createAction(TOGGLE_TODO);
+
+export const removeTodo = createAction(REMOVE_TODO);
+
+export const setVisibilityFilter = createAction(SET_VISIBILITY_FILTER);
+
+export const searchTodo = createAction(SEARCH_TODO);
+
+export const fetchData = () => {
+  return dispatch => {
+    setTimeout(() => {
+      dispatch(fetchTodo(data));
+    }, 2000);
   };
-};
-
-export const addTodo = content => {
-  return {
-    type: ADD_TODO,
-    content
-  };
-};
-
-export const toggleTodo = index => {
-  return { type: TOGGLE_TODO, index };
-};
-
-export const removeTodo = index => {
-  return { type: REMOVE_TODO, index };
-};
-
-export const setVisibilityFilter = filter => {
-  return { type: SET_VISIBILITY_FILTER, filter };
-};
-
-export const searchTodo = searchParam => {
-  return { type: SEARCH_TODO, searchParam };
 };
